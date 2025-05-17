@@ -1,0 +1,13 @@
+name: Trigger Build on Label
+
+on:
+  push:
+    branches: [ "core" ]
+
+jobs:
+  run-if-labeled:
+    if: contains(github.event.pull_request.labels.*.name, 'Github Action')
+    uses: Grace-Engine-Org/GraceEngineCore/.github/workflows/Build.yml@core
+    permissions:
+      contents: read
+      pull-requests: read
