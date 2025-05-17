@@ -5,8 +5,7 @@ on:
     branches: [ "core" ]
 
 jobs:
-  run-if-labeled:
-    if: contains(github.event.pull_request.labels.*.name, 'Github Action')
+  run:
     uses: Grace-Engine-Org/GraceEngineCore/.github/workflows/Build.yml@core
     permissions:
       contents: read
